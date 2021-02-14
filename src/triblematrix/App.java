@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayList<MyObject> list1 = getNumbers(3, 5, -88, -92,-42);
-        ArrayList<MyObject> list2 = getNumbers(8, 14, -242, -254,-114);
+        ArrayList<MyObject> list1 = getNumbers(-12, 10, -94, 110, -114);
+        ArrayList<MyObject> list2 = getNumbers(4, -15, 43, -165, 143);
         ArrayList<MyObject> same = same(list1, list2);
         read(same);
     }
@@ -42,17 +42,15 @@ public class App {
         int index1 = 0;
         int index2 = 0;
         try {
-            while (index1 < list1.size()) {
-                while (index2 < list2.size()) {
-                    if (list1.get(index1).compareTo(list2.get(index2)) == 0) {
-                        same.add(list1.get(index1));
-                        index1++;
-                        index2++;
-                    } else if (list1.get(index1).compareTo(list2.get(index2)) > 0) {
-                        index2++;
-                    } else {
-                        index1++;
-                    }
+            while (index1 < list1.size() && index2 < list2.size()) {
+                if (list1.get(index1).compareTo(list2.get(index2)) == 0) {
+                    same.add(list1.get(index1));
+                    index1++;
+                    index2++;
+                } else if (list1.get(index1).compareTo(list2.get(index2)) > 0) {
+                    index2++;
+                } else {
+                    index1++;
                 }
             }
         } catch (Exception e) {
