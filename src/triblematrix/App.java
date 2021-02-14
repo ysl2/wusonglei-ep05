@@ -56,7 +56,7 @@ public class App {
                 }
             }
         } catch (Exception e) {
-            System.out.println("");
+            System.out.print("");
         }
         return same;
     }
